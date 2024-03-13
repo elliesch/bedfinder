@@ -23,8 +23,16 @@ class ClassifyBedforms:
 
     def inputs_to_pandas(self, input_csv):
         
-        #add import csv
-        
+        self.input_csv = pd.read_csv('RandomForest/BedformData.csv')
+        self.y = input_csv['Y/N'] #results data that will be used to compare to the trained output
+        self.X = input_csv[['Topo', 'Bed', 'Elong', 'Area']] #input data that will be used to train the results
+
+        X['Topo'][X['Topo'] == 'O']=1
+        X['Topo'][X['Topo'] == 'V']=0
+        X['Bed'][X['Bed'] == 'C']=1
+        X['Bed'][X['Bed'] == 'S']=0
+
+        X = X.astype('int8') #change all columns of the input dataset to integers from string
         #add preprocess codes to one hot encode
         
         return X
