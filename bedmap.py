@@ -7,11 +7,15 @@ from sklearn.model_selection import KFold
 
 
 class ClassifyBedforms:
+    '''
+    write a docstring here
+    '''
     
     def __init__(self, input_csv):
         
         self.X_test = self.inputs_to_pandas(input_csv)
-        self.bedform = self.classify_bedforms(self.X_test)
+        self.predicted_bedform = self.classify_bedforms(self.X_test)
+        self.output_file ...
         
     def classify_bedforms(self, X_test):
         
@@ -23,9 +27,8 @@ class ClassifyBedforms:
 
     def inputs_to_pandas(self, input_csv):
         
-        self.input_csv = pd.read_csv('RandomForest/BedformData.csv')
-        self.y = input_csv['Y/N'] #results data that will be used to compare to the trained output
-        self.X = input_csv[['Topo', 'Bed', 'Elong', 'Area']] #input data that will be used to train the results
+        csv = pd.read_csv(input_csv)
+        X = csv[['Topo', 'Bed', 'Elong', 'Area']] #input data that will be used to train the results
 
         X['Topo'][X['Topo'] == 'O']=1
         X['Topo'][X['Topo'] == 'V']=0
