@@ -4,6 +4,8 @@ import joblib
 import pandas as pd
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import KFold
+import warnings
+warnings.filterwarnings('ignore')
 
 
 class ClassifyBedforms:
@@ -15,7 +17,6 @@ class ClassifyBedforms:
         
         self.X_test = self.inputs_to_pandas(input_csv)
         self.predicted_bedform = self.classify_bedforms(self.X_test)
-        self.output_file ...
         
     def classify_bedforms(self, X_test):
         
