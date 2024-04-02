@@ -1,2 +1,2 @@
 # rf_bedform_mapping
-All the random forests for all the bedrooms!!
+All the random forests for all the bedforms!!
