@@ -16,15 +16,16 @@ class ClassifyBedforms:
     def __init__(self, input_csv):
         
         self.X_test = self.inputs_to_pandas(input_csv)
-        self.predicted_bedform = self.classify_bedforms(self.X_test)
+        self.predicted_bedform, self.bedform_probability = self.classify_bedforms(self.X_test)
         
     def classify_bedforms(self, X_test):
         
         rf_model = joblib.load('RandomForest.pkl')
         
         y_est = rf_model.predict(X_test)
+        y_est_prob = rf_model.predict_proba(X_test)
         
-        return y_est
+        return y_est, y_est_prob
 
     def inputs_to_pandas(self, input_csv):
         
