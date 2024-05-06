@@ -7,21 +7,30 @@ from utilities import inputs_to_pandas
 import warnings
 warnings.filterwarnings('ignore')
      
- csv = inputs_to_pandas('rf_bedform_mapping/data/BedformData.csv')
+csv = inputs_to_pandas('~/rf_bedform_mapping/data/BedformData.csv')
 #need to edit all BedformData.csv to include site # so that these data may be filtered
+
+'''
+Sample mask:
+site_1_mask = ((csv['site'] == 1) & (csv['Area'] > 20000 & csv['Area'] < 400000) & (csv['MBG_Orient'] > 120 & csv['MBG_Orient'] < 180))
+
+Sample pandas locater with masks:
+csv_filtered = csv.loc[site_1_mask | site_2_mask]
+'''
 
 #Downsample to n using scientific decisions
 for n in input_csv
-    for site == 1 #Chautauqua New York US
-    if Area > 20000 and Area < 400000
-    and MBG_Orient > 120 and MBG_Orient < 180
-    break
-
-    for site == 2 #Bardardalur Iceland
-    if MBG_Length > 300
-    and MBG_Width > 150 and MBG_Width < 900
-    and MBG_Orient > 0 and MBG_Orient < 180
-    break
+    (for site == 1 #Chautauqua New York US
+     if Area > 20000 and Area < 400000
+     and MBG_Orient > 120 and MBG_Orient < 180)
+    
+    or
+    
+    (for site == 2 #Bardardalur Iceland
+     if MBG_Length > 300
+     and MBG_Width > 150 and MBG_Width < 900
+     and MBG_Orient > 0 and MBG_Orient < 180)
+    or
 
     for site == 3 #M'Clintock Channel Canada
     if MBG_Width < 1075
