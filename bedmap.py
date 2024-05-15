@@ -9,7 +9,32 @@ warnings.filterwarnings('ignore')
 
 class ClassifyBedforms:
     '''
-    write a docstring here
+    Classify bedforms based on input features using machine learning models.
+
+    Parameters:
+    -----------
+    input_csv : str
+        Path to the input CSV file containing features for classification.
+    model : {'ensemble_average', 'random_forest', 'xgboost'}, default='ensemble_average'
+        The classification model to be used.
+    threshold : float, default=0.45
+        Threshold for classifying bedforms based on predicted probabilities.
+    probability : bool, default=False
+        If True, returns the predicted probabilities; if False, returns binary predictions.
+
+    Attributes:
+    -----------
+    X_test : pandas.DataFrame
+        Features extracted from the input CSV file for classification.
+    predicted_bedforms : numpy.ndarray
+        Predicted bedforms based on the chosen model and settings.
+
+    Methods:
+    --------
+    classify_bedforms(X_test, model, threshold, probability)
+        Classifies bedforms based on input features using the specified model.
+    inputs_to_pandas(input_csv)
+        Reads input CSV file and processes features for classification.
     '''
     
     def __init__(self, input_csv, 
