@@ -2,8 +2,7 @@
 
 import joblib
 import pandas as pd
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import KFold
+import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -14,8 +13,8 @@ class ClassifyBedforms:
     '''
     
     def __init__(self, input_csv, 
-                 model='ensemble',
-                 threshold='default',
+                 model='ensemble_average',
+                 threshold=0.45,
                  probability=False
                 ):
         
@@ -37,7 +36,7 @@ class ClassifyBedforms:
                 return y_est
 
             else:
-                return y_est_prob
+                return y_est_prob[:,1]
 
         if model == 'xgboost':
             xgb_model=joblib.load('models/XGBoost.pkl')
@@ -49,7 +48,7 @@ class ClassifyBedforms:
                 return y_est
 
             else:
-                return y_est_prob
+                return y_est_prob[:,1]
 
         if model == 'ensemble_average':
             rf_model=joblib.load('models/RandomForest.pkl')
@@ -67,7 +66,7 @@ class ClassifyBedforms:
                 return y_est
 
             else:
-                return y_est_prob
+                return y_est_prob[:,1]
         
 
     def inputs_to_pandas(self, input_csv):
