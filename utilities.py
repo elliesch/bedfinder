@@ -54,6 +54,10 @@ def plot_rate_matrix(conf_matrix, title='Confusion Matrix'):
     plt.show()
 
 def thresh(array, threshold):
+    '''
+    Binarizes an array of probability thresholds
+    to chosen threshold
+    '''
     mod_array = (array >= threshold).astype(int)
     
     return mod_array
