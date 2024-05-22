@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 import numpy as np
 import warnings
+from .utilities import thresh
 warnings.filterwarnings('ignore')
 
 
@@ -52,44 +53,54 @@ class ClassifyBedforms:
     def classify_bedforms(self, X_test, model, threshold, probability):
 
         if model == 'random_forest':
+
+            #Load and predict bedforms using Random Forest
             rf_model=joblib.load('models/RandomForest.pkl')
             y_est_prob = rf_model.predict_proba(X_test)
-            
+
+            #Return thresholded predictions
             if probability == False:
-                y_est = (y_est_prob[:,1] >= threshold).astype(int)
+                y_est = thresh(y_est_prob[:,1], threshold)
                 
                 return y_est
 
+            #Return probabilities
             else:
                 return y_est_prob[:,1]
 
         if model == 'xgboost':
+
+            #Load and predict bedforms using XGBoost
             xgb_model=joblib.load('models/XGBoost.pkl')
             y_est_prob = xgb_model.predict_proba(X_test)
-            
+
+            #Return thresholded predictions
             if probability == False:
-                y_est = (y_est_prob[:,1] >= threshold).astype(int)
+                y_est = thresh(y_est_prob[:,1], threshold)
                 
                 return y_est
-
+                
+            #Return probabilities
             else:
                 return y_est_prob[:,1]
 
         if model == 'ensemble_average':
+
+            #Calculate Ensemble Average of RF and XGB predictions
             rf_model=joblib.load('models/RandomForest.pkl')
             xgb_model=joblib.load('models/XGBoost.pkl')
 
-            y_est_prob = xgb_model.predict_proba(X_test)
-
             y_est_prob = np.mean([xgb_model.predict_proba(X_test), 
                                   rf_model.predict_proba(X_test)], 
-                                 axis=0)
-                        
+                                  axis=0)
+            
+            #Return thresholded predictions            
             if probability == False:
-                y_est = (y_est_prob[:,1] >= threshold).astype(int)
+                y_est = thresh(y_est_prob[:,1], threshold)
                 
                 return y_est
 
+            #Return probabilities
             else:
                 return y_est_prob[:,1]
         
@@ -98,7 +109,7 @@ class ClassifyBedforms:
 
         #Read in the csv file
         csv = pd.read_csv(input_csv)
-        X = csv[['Topo', 'Bed', 'Elong', 'Area']] #input data that will be used to train the results
+        X = csv[['Topo', 'Bed', 'Elong', 'Area']] 
 
         #Binarize the Topo and Bed columns
         X['Topo'][X['Topo'] == 'O']=1
