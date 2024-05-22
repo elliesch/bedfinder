@@ -24,5 +24,11 @@ dynamic = ["dependencies"]
 Homepage = "https://github.com/elliesch/rf_bedform_mapping"
 Issues = "https://github.com/elliesch/rf_bedform_mapping/issues"
 
+[tool.setuptools.package-data]
+package = [
+    "bedmap/*.py",
+    "models/*.pkl"
+]
+
 [tool.setuptools.dynamic]
 dependencies = {file = ["bedmap-env.yml"]}
