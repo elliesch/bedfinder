@@ -3,6 +3,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import importlib.resources
+import joblib
 
 
 def plot_rate_matrix(conf_matrix, title='Confusion Matrix'):
@@ -61,3 +63,10 @@ def thresh(array, threshold):
     mod_array = (array >= threshold).astype(int)
     
     return mod_array
+
+def load_model(package, filename):
+    '''
+    Reads in the model pickle files from the package
+    '''
+    with importlib.resources.path(package, filename) as file_path:
+        return joblib.load(file_path)
