@@ -52,6 +52,9 @@ class ClassifyBedforms:
     
     def classify_bedforms(self, X_test, model, threshold, probability):
 
+        if model not in ['random_forest', 'xgboost', 'ensemble_average']:
+            raise ValueError("Invalid model choice. Allowed values are 'random_forest', 'xgboost', or 'ensemble_average'.")
+
         if model == 'random_forest':
 
             #Load and predict bedforms using Random Forest
