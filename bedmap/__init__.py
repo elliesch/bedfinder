@@ -2,11 +2,10 @@
 bedmap.
 
 This is initialized with the following modules:
-    - .ingest      : Import large data image in location and preprocess
-    - .tiling      : Overlap tiling, with specific non-redundant transforms added in
-    - .dataset     : Postprocess tiles into PyTorch or Tensorflow datasets
-    - .viz         : Visualization tools for checking on data
-    - .util        : Package utilities
+    - .bedmap      : Classify TPI products into glacially derived bedforms
+    - .filtering   : Filter input TPI data to improve model accuracy
+    - .utilities   : Helper functions for the script
+
 '''
 
 __version__ = '0.0.1'
