@@ -1,10 +1,9 @@
 ''' Bed Mapping Script -- Core Functionality '''
 
-import joblib
 import pandas as pd
 import numpy as np
 import warnings
-from .utilities import thresh
+from .utilities import thresh, load_model
 warnings.filterwarnings('ignore')
 
 
@@ -58,7 +57,7 @@ class ClassifyBedforms:
         if model == 'random_forest':
 
             #Load and predict bedforms using Random Forest
-            rf_model=joblib.load('models/RandomForest.pkl')
+            rf_model=load_model('bedmap.models', 'RandomForest.pkl')
             y_est_prob = rf_model.predict_proba(X_test)
 
             #Return thresholded predictions
@@ -74,7 +73,7 @@ class ClassifyBedforms:
         if model == 'xgboost':
 
             #Load and predict bedforms using XGBoost
-            xgb_model=joblib.load('models/XGBoost.pkl')
+            xgb_model=load_model('bedmap.models', 'XGBoost.pkl')
             y_est_prob = xgb_model.predict_proba(X_test)
 
             #Return thresholded predictions
@@ -90,8 +89,8 @@ class ClassifyBedforms:
         if model == 'ensemble_average':
 
             #Calculate Ensemble Average of RF and XGB predictions
-            rf_model=joblib.load('models/RandomForest.pkl')
-            xgb_model=joblib.load('models/XGBoost.pkl')
+            rf_model=load_model('bedmap.models', 'RandomForest.pkl')
+            xgb_model=load_model('bedmap.models', 'XGBoost.pkl')
 
             y_est_prob = np.mean([xgb_model.predict_proba(X_test), 
                                   rf_model.predict_proba(X_test)], 
