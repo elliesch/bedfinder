@@ -1,0 +1,7 @@
+arcpy
+joblib
+pandas
+numpy
+matplotlib
+scikit-learn~=1.4.2
+xgboost~=2.0.3

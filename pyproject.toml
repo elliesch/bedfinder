@@ -9,9 +9,9 @@ authors = [
   { name="Ellianna Abrahams", email="ellianna@berkeley.edu" },
   { name="Marion McKenzie", email="marion.mckenzie@mines.edu" },
 ]
-description = "A Python package to automate the classification of glacial bedforms."
+description = "A Python package to automate the classification of glacially derived bedforms."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: BSD 3-Clause License",
@@ -24,11 +24,10 @@ dynamic = ["dependencies"]
 Homepage = "https://github.com/elliesch/rf_bedform_mapping"
 Issues = "https://github.com/elliesch/rf_bedform_mapping/issues"
 
-[tool.setuptools.package-data]
-package = [
-    "bedmap/*.py",
-    "models/*.pkl"
-]
+[tool.setuptools.packages.find]
+include = ["bedmap"]  
+exclude = ["arcgis_bedmap","book","data","figs","notebooks"]`
+namespaces = false
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["bedmap-env.yml"]}
+dependencies = {file = ["requirements.txt"]}
