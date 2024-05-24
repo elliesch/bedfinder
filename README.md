@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="450" src="https://github.com/elliesch/rf_bedform_mapping/blob/main/figs/logo.png"/>
+</p>
+
 # `bedmap`: A Python package for the Automatic Detection of Glacially-derived Bedforms
 
 The `bedmap` workflow automates the detection of glacially-derived bedforms for landforms identified from the Topographic Position Index (TPI) tool using machine learning. Users can pick one of three trained ensemble models (Random Forest, XGBoost, or the ensemble average of both) to detect bedforms from positive relief landforms, and choose to output detections as bedform probabilities or as binarized predictions. `bedmap` also includes a routine for running a scientifically-driven prefiltering routine on TPI data to prepare it for use with machine learning models.
