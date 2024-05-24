@@ -24,12 +24,9 @@ dynamic = ["dependencies"]
 Homepage = "https://github.com/elliesch/rf_bedform_mapping"
 Issues = "https://github.com/elliesch/rf_bedform_mapping/issues"
 
-# [tool.setuptools]
-# packages = ["bedmap"]
-
 [tool.setuptools.packages.find]
 include = ["bedmap"]  
-# alternatively: `exclude = ["additional*"]`
+exclude = ["arcgis_bedmap","book","data","figs","notebooks"]`
 namespaces = false
 
 [tool.setuptools.dynamic]
