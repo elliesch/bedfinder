@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
-    "Topic :: Scientific/Engineering :: Earth Sciences"
+    "Topic :: Scientific/Engineering :: GIS"
 ]
 dynamic = ["dependencies"]
 
