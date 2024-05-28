@@ -1,1 +1,2 @@
 include bedmap/models/*.pkl
+include figs/logo.png
