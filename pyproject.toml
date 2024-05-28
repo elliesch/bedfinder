@@ -26,8 +26,6 @@ Issues = "https://github.com/elliesch/rf_bedform_mapping/issues"
 
 [tool.setuptools.packages.find]
 include = ["bedmap"]  
-# exclude = ["arcgis_bedmap","book","data","figs","notebooks"]`
-# namespaces = false
 
 [tool.setuptools.package-data]
 "models" = ["*.pkl"]
