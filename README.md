@@ -42,8 +42,27 @@ predicted_bedforms = landforms.predicted_bedforms
 ```
 
 # References & Attribution
-The code is under development and will be described in a paper and jupyter book.
+The code is under development and will be described in a paper and Jupyter Book.
 If you make use of this code in your research, please cite:
 ```
 LaTeX citations to go here.
 ```
+
+If you make use of the training data in your research, please cite:
+```
+@misc{mckenzie2022_dataset,
+ author={Marion A {McKenzie} and Lauren M {Simkins} and Sarah M {Principato}},
+ title={{Streamlined subglacial bedforms across the deglaciated Northern Hemisphere}},
+ year={2022},
+ doi={10.1594/PANGAEA.939999},
+ url={https://doi.org/10.1594/PANGAEA.939999},
+ type={data set},
+ publisher={PANGAEA}
+}
+```
+
+If you make use of the Wisconsin Bay Lobe data in your research, please cite:
+```
+LaTeX citation for Zenodo DOI to go here.
+```
+
