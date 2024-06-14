@@ -62,6 +62,7 @@ If you make use of the training data in your research, please cite:
 ```
 
 If you make use of the Wisconsin Bay Lobe data in your research, please cite:
+
 [![DOI](https://zenodo.org/badge/768265366.svg)](https://zenodo.org/doi/10.5281/zenodo.11660146)
 ```
 @misc{wiscbaylobe_dataset,
