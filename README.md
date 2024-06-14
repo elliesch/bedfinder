@@ -62,7 +62,15 @@ If you make use of the training data in your research, please cite:
 ```
 
 If you make use of the Wisconsin Bay Lobe data in your research, please cite:
+[![DOI](https://zenodo.org/badge/768265366.svg)](https://zenodo.org/doi/10.5281/zenodo.11660146)
 ```
-LaTeX citation for Zenodo DOI to go here.
+@misc{wiscbaylobe_dataset,
+  author       = {Ellianna {Abrahams} and Marion A {McKenzie},
+  title        = {bedmap: A Python package for the Automatic Detection of Glacially-Derived Bedforms},
+  year         = {2024},
+  doi          = {10.5281/zenodo.11660146},
+  url          = {https://zenodo.org/doi/10.5281/zenodo.11660146},
+  note         = {Pre-release}
+}
 ```
 
