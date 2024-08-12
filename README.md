@@ -1,4 +1,4 @@
-ƒ<p align="center">
+<p align="center">
   <img width="450" src="https://github.com/elliesch/rf_bedform_mapping/blob/main/figs/logo.png"/>
 </p>
 
