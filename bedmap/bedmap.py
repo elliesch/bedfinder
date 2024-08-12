@@ -57,7 +57,7 @@ class ClassifyBedforms:
         if model == 'random_forest':
 
             #Load and predict bedforms using Random Forest
-            rf_model=load_model('bedmap.models', 'RandomForest.pkl')
+            rf_model=load_model('bedfinder.models', 'RandomForest.pkl')
             y_est_prob = rf_model.predict_proba(X_test)
 
             #Return thresholded predictions
@@ -73,7 +73,7 @@ class ClassifyBedforms:
         if model == 'xgboost':
 
             #Load and predict bedforms using XGBoost
-            xgb_model=load_model('bedmap.models', 'XGBoost.pkl')
+            xgb_model=load_model('bedfinder.models', 'XGBoost.pkl')
             y_est_prob = xgb_model.predict_proba(X_test)
 
             #Return thresholded predictions
@@ -89,8 +89,8 @@ class ClassifyBedforms:
         if model == 'ensemble_average':
 
             #Calculate Ensemble Average of RF and XGB predictions
-            rf_model=load_model('bedmap.models', 'RandomForest.pkl')
-            xgb_model=load_model('bedmap.models', 'XGBoost.pkl')
+            rf_model=load_model('bedfinder.models', 'RandomForest.pkl')
+            xgb_model=load_model('bedfinder.models', 'XGBoost.pkl')
 
             y_est_prob = np.mean([xgb_model.predict_proba(X_test), 
                                   rf_model.predict_proba(X_test)], 
