@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="450" src="https://github.com/elliesch/rf_bedform_mapping/blob/main/figs/logo.png"/>
+  <img width="450" src="https://github.com/elliesch/bedfinder/blob/main/figs/logo.png"/>
 </p>
 
 # `bedfinder`: A Python package for the Automatic Detection of Glacially-derived Bedforms
