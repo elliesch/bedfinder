@@ -1,2 +1,2 @@
-include bedmap/models/*.pkl
+include bedfinder/models/*.pkl
 include figs/logo.png
