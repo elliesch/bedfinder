@@ -47,6 +47,7 @@ If you make use of this code in your research, please cite:
 ```
 LaTeX citations to go here.
 ```
+If you would like to make use of the training data in your work, please see [https://github.com/marionmckenzie/TPI](https://github.com/marionmckenzie/TPI).
 
 If you make use of the training data in your research, please cite:
 ```
@@ -61,7 +62,7 @@ If you make use of the training data in your research, please cite:
 }
 ```
 
-If you make use of the Wisconsin Bay Lobe data in your research, please cite:
+If you make use of the TPI tool or the Wisconsin Bay Lobe data in your research, please cite:
 
 [![DOI](https://zenodo.org/badge/768265366.svg)](https://zenodo.org/doi/10.5281/zenodo.11660146)
 ```
