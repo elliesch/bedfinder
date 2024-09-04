@@ -47,7 +47,6 @@ If you make use of this code in your research, please cite:
 ```
 LaTeX citations to go here.
 ```
-If you would like to make use of the training data in your work, please see [https://github.com/marionmckenzie/TPI](https://github.com/marionmckenzie/TPI).
 
 If you make use of the training data in your research, please cite:
 ```
@@ -61,8 +60,19 @@ If you make use of the training data in your research, please cite:
  publisher={PANGAEA}
 }
 ```
-
-If you make use of the TPI tool or the Wisconsin Bay Lobe data in your research, please cite:
+If you make use of the TPI tool, please cite:
+[![DOI]([https://zenodo.org/badge/DOI/10.5281/zenodo.13685546.svg](https://zenodo.org/records/13685546)
+```
+@misc{TPI_dataset,
+  author       = {Marion A {McKenzie},
+  title        = {Topographic Position Index (TPI) enabled for ArcGIS},
+  year         = {2024},
+  doi          = {10.5281/zenodo.13685546},
+  url          = {[https://zenodo.org/records/13685546](https://zenodo.org/records/13685546)},
+  note         = {v1.0.0}
+}
+```
+If you make use of the machine learning tool or Wisconsin Bay Lobe data in your research, please cite:
 
 [![DOI](https://zenodo.org/badge/768265366.svg)](https://zenodo.org/doi/10.5281/zenodo.11660146)
 ```
