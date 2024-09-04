@@ -61,7 +61,7 @@ If you make use of the training data in your research, please cite:
 }
 ```
 If you make use of the TPI tool, please cite:
-[![DOI]([https://zenodo.org/badge/DOI/10.5281/zenodo.13685546.svg](https://zenodo.org/records/13685546)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13685546.svg)](https://zenodo.org/records/13685546)
 ```
 @misc{TPI_dataset,
   author       = {Marion A {McKenzie},
